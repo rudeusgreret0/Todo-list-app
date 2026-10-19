@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Aura Tasks</string>
+    <string name="header_title">My Tasks</string>
+    <string name="input_placeholder">Add a new task…</string>
+    <string name="button_add">Add</string>
+    <string name="cd_toggle_dark_mode">Toggle dark or light appearance</string>
+    <string name="cd_select_theme">Choose ultra-premium color theme</string>
+    <string name="cd_cycle_theme">Cycle to next color palette</string>
+    <string name="cd_toggle_task_status">Toggle task completion status</string>
+    <string name="cd_delete_task">Delete task</string>
+    <string name="cd_clear_completed">Clear completed tasks</string>
+    <string name="gesture_hint_text">Swipe right to complete  •  Swipe left to delete  •  Hold to edit</string>
+    <string name="swipe_action_complete">Complete</string>
+    <string name="swipe_action_undo_complete">Mark Active</string>
+    <string name="swipe_action_delete">Delete</string>
+    <string name="empty_state_title">Your mind is clear</string>
+    <string name="empty_state_subtitle">Type above to add a task, or swipe tasks left and right for effortless one-handed control.</string>
+    <string name="snackbar_task_deleted">Task removed</string>
+    <string name="snackbar_undo">Undo</string>
+    <string name="edit_task_title">Edit Task</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="filter_all">All</string>
+    <string name="filter_active">Active</string>
+    <string name="filter_done">Completed</string>
+    <string name="theme_royal_indigo">Royal Indigo</string>
+    <string name="theme_obsidian_gold">Obsidian Gold</string>
+    <string name="theme_emerald_silk">Emerald Silk</string>
+    <string name="theme_rose_quartz">Rose Quartz</string>
+    <string name="theme_nordic_frost">Nordic Frost</string>
+    <string name="theme_amethyst_velvet">Amethyst Velvet</string>
+    <string name="theme_cycle_label">Cycle Palette</string>
+</resources>

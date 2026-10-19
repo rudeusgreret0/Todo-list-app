@@ -1,0 +1,6 @@
+{
+  "name": "Aura Tasks",
+  "description": "An ultra-premium, minimalist gesture-driven todo list with smooth multi-theme aesthetics and real-time cloud sync.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
