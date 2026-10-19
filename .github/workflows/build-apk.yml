@@ -25,11 +25,17 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Accept Android SDK Licenses
-        run: yes | sdkmanager --licenses || true
+      - name: Configure Android SDK and Accept Licenses
+        run: |
+          export ANDROID_SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> "$GITHUB_ENV"
+          SDKMANAGER="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          if [ ! -x "$SDKMANAGER" ]; then
+            SDKMANAGER=$(find "$ANDROID_SDK_ROOT" -name sdkmanager -type f | head -n 1)
+          fi
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" "platform-tools" "build-tools;35.0.0" > /dev/null || true
 
       - name: Prepare debug.keystore for signing
         run: |
@@ -72,6 +78,7 @@ jobs:
 
       - name: Publish Direct-Download APK to GitHub Releases
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest-apk
